@@ -1,0 +1,731 @@
+/* ========================================
+   BEAN & BREW
+   MAIN STYLESHEET
+======================================== */
+
+
+/* ========================================
+   COLOR VARIABLES
+======================================== */
+
+:root {
+
+    --coffee-dark: #3b2416;
+
+    --coffee-medium: #795548;
+
+    --cream: #f8f1e7;
+
+    --light-cream: #fffaf4;
+
+    --accent: #c98b4a;
+
+    --white: #ffffff;
+
+    --text-dark: #2c1b12;
+
+    --text-light: #666666;
+}
+
+
+/* ========================================
+   BASIC RESET
+======================================== */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: var(--cream);
+
+    color: var(--text-dark);
+
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+
+    background-color: var(--coffee-dark);
+
+    color: var(--white);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 8%;
+}
+
+
+header h1 {
+
+    font-size: 30px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+nav {
+
+    display: flex;
+
+    gap: 30px;
+}
+
+
+nav a {
+
+    color: var(--white);
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    transition: color 0.3s ease;
+}
+
+
+nav a:hover {
+
+    color: var(--accent);
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+
+    min-height: 65vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background: linear-gradient(
+        135deg,
+        var(--cream),
+        #e8d5c0
+    );
+}
+
+
+.hero-content {
+
+    max-width: 750px;
+}
+
+
+.hero-small {
+
+    color: var(--coffee-medium);
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h2 {
+
+    color: var(--coffee-dark);
+
+    font-size: 58px;
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+
+.hero-description {
+
+    font-size: 18px;
+
+    color: var(--text-light);
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   HERO BUTTONS
+======================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.btn {
+
+    display: inline-block;
+
+    background-color: var(--coffee-dark);
+
+    color: var(--white);
+
+    padding: 13px 26px;
+
+    border: 2px solid var(--coffee-dark);
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.btn:hover {
+
+    background-color: var(--accent);
+
+    border-color: var(--accent);
+
+    transform: scale(1.05);
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Second button */
+
+.btn-outline {
+
+    background-color: transparent;
+
+    color: var(--coffee-dark);
+}
+
+
+.btn-outline:hover {
+
+    background-color: var(--coffee-dark);
+
+    border-color: var(--coffee-dark);
+
+    color: var(--white);
+}
+
+
+/* ========================================
+   FEATURED SECTION
+======================================== */
+
+.featured {
+
+    background-color: var(--light-cream);
+
+    padding: 75px 8%;
+
+    text-align: center;
+}
+
+
+.featured > h2 {
+
+    color: var(--coffee-dark);
+
+    font-size: 36px;
+
+    margin-bottom: 5px;
+}
+
+
+.section-subtitle {
+
+    color: var(--coffee-medium);
+
+    margin-bottom: 40px;
+
+    font-size: 17px;
+}
+
+
+/* ========================================
+   COFFEE CARD GRID
+======================================== */
+
+.card-container {
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ========================================
+   COFFEE CARDS
+======================================== */
+
+.card {
+
+    background-color: var(--white);
+
+    padding: 35px 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 14px 30px rgba(59, 36, 22, 0.20);
+}
+
+
+.coffee-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.card h3 {
+
+    color: var(--coffee-dark);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+
+.card p {
+
+    color: var(--text-light);
+
+    margin-bottom: 15px;
+}
+
+
+.price {
+
+    display: block;
+
+    color: var(--coffee-medium);
+
+    font-size: 21px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+
+    background-color: var(--coffee-dark);
+
+    color: var(--white);
+
+    text-align: center;
+
+    padding: 22px;
+}
+
+
+/* ========================================
+   PAGE ENTRY ANIMATION
+======================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+main {
+
+    animation: fadeUp 0.8s ease;
+}
+
+
+/* ========================================
+   MENU PAGE
+======================================== */
+
+.menu-section {
+
+    padding: 60px 8%;
+
+    text-align: center;
+}
+
+
+.menu-section > h2 {
+
+    margin: 30px 0 20px;
+
+    color: var(--coffee-dark);
+}
+
+
+.menu-grid {
+
+    max-width: 1100px;
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.image-placeholder {
+
+    background-color: #ead8c5;
+
+    color: var(--coffee-medium);
+
+    padding: 45px 10px;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   GENERAL BUTTONS
+======================================== */
+
+button {
+
+    background-color: var(--coffee-dark);
+
+    color: var(--white);
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 11px 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+button:hover {
+
+    background-color: var(--accent);
+
+    transform: scale(1.05);
+}
+
+
+/* ========================================
+   CONTACT / RESERVATION PAGE
+======================================== */
+
+.contact-section {
+
+    max-width: 650px;
+
+    margin: 60px auto;
+
+    background-color: var(--white);
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+.contact-section h2 {
+
+    text-align: center;
+
+    color: var(--coffee-dark);
+
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+
+.contact-section > p {
+
+    text-align: center;
+
+    color: var(--text-light);
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================================
+   CONTACT FORM
+======================================== */
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+form label {
+
+    font-weight: bold;
+
+    color: var(--coffee-dark);
+
+    margin-top: 5px;
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+input:focus,
+textarea:focus {
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 5px rgba(201, 139, 74, 0.4);
+}
+
+
+textarea {
+
+    resize: vertical;
+}
+
+
+form button {
+
+    margin-top: 15px;
+}
+
+
+/* ========================================
+   TABLET / MOBILE RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 768px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+
+    nav {
+
+        gap: 18px;
+    }
+
+
+    .hero {
+
+        min-height: 55vh;
+
+        padding: 60px 20px;
+    }
+
+
+    .hero h2 {
+
+        font-size: 40px;
+    }
+
+
+    .hero-description {
+
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    .btn {
+
+        width: 220px;
+    }
+
+
+    .card-container,
+    .menu-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .contact-section {
+
+        margin: 30px 20px;
+
+        padding: 25px;
+    }
+
+}
+
+
+/* ========================================
+   SMALL PHONE
+======================================== */
+
+@media (max-width: 480px) {
+
+    header h1 {
+
+        font-size: 25px;
+    }
+
+
+    nav {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .hero h2 {
+
+        font-size: 34px;
+    }
+
+
+    .featured {
+
+        padding: 50px 20px;
+    }
+
+}
