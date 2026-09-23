@@ -1,22 +1,37 @@
+// Import Express
 const express = require('express');
 
+// Create the Express application
 const app = express();
 
+// Port used by the server
 const PORT = 3000;
 
 
-// Read information submitted from HTML forms
+// ---------------------------------------
+// Middleware
+// ---------------------------------------
+
+// Allows Express to read information
+// submitted from HTML forms
 app.use(express.urlencoded({ extended: true }));
 
 
-// Serve the files inside the public folder
+// Serve HTML, CSS, and other static files
+// from the public folder
 app.use(express.static('public'));
 
 
-// Reservation form route
+// ---------------------------------------
+// Reservation Route
+// ---------------------------------------
+
+// This route receives the reservation form
+// when the user clicks "Book Table"
 app.post('/submit-reservation', (req, res) => {
 
-    // Get the information from the form
+    // Get the submitted information
+    // from the HTML form
     const {
         name,
         email,
@@ -26,7 +41,10 @@ app.post('/submit-reservation', (req, res) => {
     } = req.body;
 
 
-    // Print the reservation information in the terminal
+    // Display the submitted reservation
+    // information in the terminal
+    console.log('New Reservation:');
+
     console.log({
         name,
         email,
@@ -36,25 +54,78 @@ app.post('/submit-reservation', (req, res) => {
     });
 
 
-    // Show confirmation in the browser
+    // Send a confirmation response
+    // back to the browser
     res.send(`
-        <h1>Reservation Confirmed!</h1>
+        <!DOCTYPE html>
 
-        <p>Thank you, ${name}.</p>
+        <html lang="en">
 
-        <p>
-            Your reservation request for
-            <strong>${date}</strong>
-            has been received.
-        </p>
+        <head>
+            <meta charset="UTF-8">
 
-        <a href="/">Return to Home</a>
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            >
+
+            <title>Reservation Confirmed | Bean & Brew</title>
+
+            <link rel="stylesheet" href="/CSS/style.css">
+        </head>
+
+        <body>
+
+            <header>
+                <h1>Bean & Brew</h1>
+
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/menu.html">Menu</a>
+                    <a href="/contact.html">Contact</a>
+                </nav>
+            </header>
+
+            <main>
+
+                <section class="contact-section">
+
+                    <h2>Reservation Confirmed!</h2>
+
+                    <p>
+                        Thank you, <strong>${name}</strong>.
+                    </p>
+
+                    <p>
+                        Your reservation request for
+                        <strong>${date}</strong>
+                        has been received.
+                    </p>
+
+                    <p>
+                        We will contact you at
+                        <strong>${email}</strong>
+                        if we need any additional information.
+                    </p>
+
+                    <a href="/">Return to Home</a>
+
+                </section>
+
+            </main>
+
+        </body>
+
+        </html>
     `);
 
 });
 
 
-// Start the server
+// ---------------------------------------
+// Start Server
+// ---------------------------------------
+
 app.listen(PORT, () => {
 
     console.log(
